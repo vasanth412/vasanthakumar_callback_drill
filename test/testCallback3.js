@@ -1,13 +1,9 @@
 const callBack3 = require('../callback3');
 
-const getCards = (id, cards) => {
-  const result = cards[id];
-  return result;
-};
-
-const test = async (id, callBack) => {
-  const result = await callBack(id, getCards);
+const getCards = (result) => {
   console.log(result);
 };
 
-test('qwsa221', callBack3);
+callBack3('qwsa221', getCards);
+
+module.exports = getCards;

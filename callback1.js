@@ -1,11 +1,10 @@
 const boards = require('./data/boards.json');
 
 const callBack1 = (id, getInfo) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(getInfo(id, boards));
-    }, 2000);
-  });
+  setTimeout(() => {
+    const result = boards.filter((element) => element.id === id);
+    getInfo(result);
+  }, 2000);
 };
 
 module.exports = callBack1;
