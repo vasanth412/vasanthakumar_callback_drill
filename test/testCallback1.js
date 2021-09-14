@@ -6,4 +6,9 @@ function getInfo(id, boards) {
 }
 
 // Function call
-callBack1('mcu453ed', getInfo);
+const test = async (id, callBack) => {
+  const result = await callBack(id, getInfo);
+  console.log(result);
+};
+
+test('mcu453ed', callBack1);
