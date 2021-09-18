@@ -1,7 +1,5 @@
-const callBack1 = require('../callback1');
+const promise1 = require('../callback1');
 
-function getInfo(result) {
-  console.log(result);
-}
-
-callBack1('mcu453ed', getInfo);
+promise1('mcu453ed')
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));

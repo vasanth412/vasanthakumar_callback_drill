@@ -1,10 +1,16 @@
 const cards = require('./data/cards.json');
 
-const callBack3 = (id, getCards) => {
-  setTimeout(() => {
-    const result = cards[id] || '';
-    getCards(result);
-  }, 2000);
+const promise3 = (id) => {
+  const getPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (id != undefined) {
+        const cardInfo = cards[id] || '';
+        resolve(cardInfo);
+      }
+      reject('Error');
+    }, 2000);
+  });
+  return getPromise;
 };
 
-module.exports = callBack3;
+module.exports = promise3;

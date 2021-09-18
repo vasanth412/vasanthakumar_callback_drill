@@ -1,10 +1,16 @@
 const list = require('./data/lists.json');
 
-const callBack2 = (id, getListInfo) => {
-  setTimeout(() => {
-    const result = list[id];
-    getListInfo(result);
-  }, 2000);
+const promise2 = (id) => {
+  const getPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (id != undefined) {
+        const listInfo = list[id];
+        resolve(listInfo);
+      }
+      reject('Error');
+    }, 2000);
+  });
+  return getPromise;
 };
 
-module.exports = callBack2;
+module.exports = promise2;
