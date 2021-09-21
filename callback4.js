@@ -19,7 +19,7 @@ const promise4 = (name) => {
       })
       .then((cardID) => promise3(cardID))
       .then((cardInfo) => console.log(cardInfo))
-      .catch((err) => console.log('Error'));
+      .catch(() => console.log('Error'));
   }, 0);
 };
 
